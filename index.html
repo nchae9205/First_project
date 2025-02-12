@@ -113,7 +113,7 @@
         background: #f9e4d4;
         padding: 20px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         justify-content: center;
         max-width: 90%;
@@ -137,14 +137,14 @@
 <body>
 <div class="container">
   <div class="navbar">
-    <a onclick="showTextPopup('밤이와 하루의 성장 과정을 보여주는 공간입니다.')">About</a>
-    <a onclick="showTextPopup('갤러리 내 모든 사진은 직접 촬영한 사진들 입니다.')">Feature</a>
-    <a onclick="showTextPopup('nec_8@naver.com')">Contact</a>
+    <a onclick="showTextPopup('이곳은 밤이와 하루의 소중한 순간을 간직한 공간이며, 기억 속 따뜻한 시간들을 담아둔 작은 보금자리입니다.')">About</a>
+    <a onclick="showTextPopup('사진에는 순간의 떨림과 따뜻한 감정이 담겨 있습니다. 직접 담아낸 추억의 조각들을 만나보세요.')">Feature</a>
+    <a onclick="showTextPopup('느린 호흡의 대화를 나누고 싶다면 언제나 환영입니다. 편하게 연락 주세요. (nec_8@naver.com)')">Contact</a>
   </div>
   <div class="main-content">
-    <p>Welcome</p>
-    <h1>밤이와 하루의 <strong>성장 기록</strong></h1>
-    <p>"이곳은 밤이와 하루의 성장 기록을 남긴 공간입니다."</p>
+    <p>그 순간, 그 따뜻함을 기억하며</p>
+    <h1>시간의 흐름 속에서 피어난 이야기</h1>
+    <p>"추억이 쌓이고 감정이 머무는 곳, <br>밤이와 하루의 소중한 시간들이 머문 자리입니다."</p>
     <button class="btn" onclick="showImagePopup()">More View</button>
   </div>
 </div>
@@ -157,6 +157,7 @@
 <div class="popup" id="image-popup">
   <div class="popup-content">
     <span class="close" onclick="closePopup('image-popup')">&times;</span>
+    <p>이 장면을 기억하시나요? 소중한 순간이 한 장의 사진 속에 머무릅니다.</p>
     <img src="https://i.imgur.com/EThKFJh.jpeg" alt="More View Image">
   </div>
 </div>
