@@ -10,7 +10,7 @@
         margin: 0;
         padding: 0;
         text-align: center;
-        background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+        background: linear-gradient(to bottom, #ffffff, #f7f7f7);
         transition: background 0.5s ease;
     }
     .container {
@@ -22,27 +22,28 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px;
+        padding: 15px;
         background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         position: fixed;
         width: 100%;
         top: 0;
         left: 0;
         z-index: 1000;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(10px);
     }
     .navbar a {
         text-decoration: none;
         color: black;
-        margin: 0 30px;
+        margin: 0 20px;
         font-weight: bold;
+        font-size: 18px;
         cursor: pointer;
         transition: color 0.3s ease, transform 0.3s ease;
     }
     .navbar a:hover {
         color: #ff5733;
-        transform: scale(1.1);
+        transform: scale(1.15);
     }
     .main-content {
         display: flex;
@@ -50,33 +51,59 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        padding-top: 60px;
+        padding-top: 80px;
     }
     .main-content h1 {
-        font-size: 42px;
+        font-size: 45px;
         font-weight: bold;
+        color: #444;
         animation: fadeIn 1s ease-in-out;
     }
     .main-content p {
         max-width: 600px;
-        font-size: 18px;
-        color: #555;
+        font-size: 20px;
+        color: #666;
         animation: fadeIn 1.5s ease-in-out;
     }
     .btn {
         margin-top: 20px;
-        padding: 14px 28px;
-        border: 2px solid black;
+        padding: 14px 30px;
+        border: none;
         border-radius: 30px;
-        background: transparent;
+        background: #ff5733;
+        color: white;
         cursor: pointer;
+        font-size: 18px;
         font-weight: bold;
-        transition: background 0.3s, color 0.3s, transform 0.3s;
+        transition: background 0.3s, transform 0.3s;
     }
     .btn:hover {
-        background: black;
-        color: white;
+        background: #d94a2b;
         transform: scale(1.1);
+    }
+    .gallery {
+        background: #f9e4d4;
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        justify-content: center;
+        max-width: 90%;
+        margin: auto;
+        border-radius: 15px;
+    }
+    .gallery img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover {
+        transform: scale(1.1);
+        box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
     }
     .popup {
         display: none;
@@ -88,19 +115,14 @@
         background: rgba(0, 0, 0, 0.8);
         justify-content: center;
         align-items: center;
-        animation: fadeIn 0.3s;
     }
     .popup-content {
         background: white;
         padding: 20px;
-        border-radius: 15px;
+        border-radius: 10px;
         position: relative;
-        max-width: 400px;
+        max-width: 500px;
         text-align: center;
-    }
-    .popup img {
-        width: 100%;
-        height: auto;
     }
     .popup .close {
         position: absolute;
@@ -109,60 +131,19 @@
         font-size: 20px;
         cursor: pointer;
     }
-    .gallery {
-        background: #f9e4d4;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        justify-content: center;
-        max-width: 90%;
-        margin: auto;
-    }
-    .gallery img {
-        width: 100%;
+    .popup img {
+        width: 80%;
         height: auto;
-        object-fit: cover;
         border-radius: 10px;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .gallery img:hover {
-        transform: scale(1.05);
-        box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
-    }
-    @media (max-width: 768px) {
-        .navbar {
-            flex-direction: column;
-        }
-        .navbar a {
-            margin: 10px 0;
-        }
-        .main-content {
-            height: auto;
-            padding: 40px 20px;
-        }
-        .gallery {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    @media (max-width: 480px) {
-        .gallery {
-            grid-template-columns: repeat(1, 1fr);
-        }
-        .btn {
-            width: 100%;
-        }
     }
   </style>
 </head>
 <body>
 <div class="container">
   <div class="navbar">
-    <a onclick="showTextPopup('이곳은 밤이와 하루의 소중한 순간을 간직한 공간이며, 기억 속 따뜻한 시간들을 담아둔 작은 보금자리입니다.')">About</a>
-    <a onclick="showTextPopup('사진에는 순간의 떨림과 따뜻한 감정이 담겨 있습니다. 직접 담아낸 추억의 조각들을 만나보세요.')">Feature</a>
-    <a onclick="showTextPopup('느린 호흡의 대화를 나누고 싶다면 언제나 환영입니다. 편하게 연락 주세요. (nec_8@naver.com)')">Contact</a>
+    <a onclick="showTextPopup('이곳은 밤이와 하루의 아름답고 소중했던 순간을 간직한 공간이기도, 기억 속 따뜻한 시간들을 담아둔 작은 보금자리이기도 합니다.')">About</a>
+    <a onclick="showTextPopup('사진에는 순간의 떨림과 따뜻한 감정, 애틋한 사랑이 담겨 있습니다. 직접 담아낸 추억의 조각들을 만나보세요.')">Feature</a>
+    <a onclick="showTextPopup('느린 호흡의 대화를 나누고 싶다면 당신이 누구든 언제나 환영합니다. 편하게 연락 주세요. (nec_8@naver.com)')">Contact</a>
   </div>
   <div class="main-content">
     <p>그 순간, 그 따뜻함을 기억하며</p>
@@ -217,5 +198,11 @@
   <img src="https://i.imgur.com/OCd385s.jpeg">
 </div>
 </div>
+</body>
+</html>
+</title>
+</head>
+<body>
+
 </body>
 </html>
