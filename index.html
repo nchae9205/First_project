@@ -132,6 +132,29 @@
         transform: scale(1.05);
         box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
     }
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+        }
+        .navbar a {
+            margin: 10px 0;
+        }
+        .main-content {
+            height: auto;
+            padding: 40px 20px;
+        }
+        .gallery {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 480px) {
+        .gallery {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .btn {
+            width: 100%;
+        }
+    }
   </style>
 </head>
 <body>
@@ -157,7 +180,7 @@
 <div class="popup" id="image-popup">
   <div class="popup-content">
     <span class="close" onclick="closePopup('image-popup')">&times;</span>
-    <p>이 장면을 기억하시나요? 소중한 순간이 한 장의 사진 속에 머무릅니다.</p>
+    <p>소중한 순간이 한 장의 사진 속에 머무릅니다.</p>
     <img src="https://i.imgur.com/EThKFJh.jpeg" alt="More View Image">
   </div>
 </div>
