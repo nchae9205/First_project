@@ -128,9 +128,21 @@
     .popup .close {
         position: absolute;
         top: 10px;
-        right: 15px;
-        font-size: 20px;
+        right: 10px;
+        font-size: 10px;
+        font-weight: bold;
         cursor: pointer;
+        color: #d94b2b;
+        background: white;
+        padding: 5px 5px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease, background 0.2s ease;
+    }
+        .popup .close:hover {
+        background: #ff6650; /* 호버 시 색상 변경 */
+        color: white;
+        transform: scale(1.1);
     }
     .popup img {
         width: 80%;
