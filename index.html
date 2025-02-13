@@ -51,7 +51,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 50vh; /* 절반으로 줄임 */
+        min-height: 60vh; /* 절반으로 줄임 */
         padding-top: 80px;
     }
     .main-content h1 {
@@ -88,7 +88,7 @@
         background: #f8d7b9;
         padding: 40px;
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
         gap: 15px;
         justify-content: center;
         max-width: 95%;
@@ -161,8 +161,18 @@
     .popup img.enlarged {
     transform: scale(1.5);
     cursor: zoom-out;
+    }
+    @media screen and (max-width: 768px) {
+        .container {
+            width: 95%;
+        }
+        .main-content {
+            min-height: 70vh; /* 모바일에서 충분한 공간 확보 */
+        }
+        .gallery {
+            margin-top: 20px; /* More View 버튼과 간격 유지 */
+        }
 }
-
   </style>
 </head>
 <body>
