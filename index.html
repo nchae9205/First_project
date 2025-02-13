@@ -1,218 +1,240 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>밤이네 하루하루</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background: linear-gradient(to bottom, #ffffff, #f7f7f7);
-            transition: background 0.5s ease;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-        .navbar a {
-            text-decoration: none;
-            color: black;
-            margin: 0 20px;
-            font-weight: bold;
-            font-size: 18px;
-            cursor: pointer;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .navbar a:hover {
-            color: #ff5733;
-            transform: scale(1.15);
-        }
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 50vh; /* 절반으로 줄임 */
-            padding-top: 80px;
-        }
-        .main-content h1 {
-            font-size: 45px;
-            font-weight: bold;
-            color: #444;
-            animation: fadeIn 1s ease-in-out;
-        }
-        .main-content p {
-            max-width: 600px;
-            font-size: 20px;
-            color: #666;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        .btn {
-            margin-top: 20px;
-            padding: 14px 30px;
-            border: none;
-            border-radius: 30px;
-            background: #ff5733;
-            color: white;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background 0.3s, transform 0.3s;
-        }
-        .btn:hover {
-            background: #d94a2b;
-            transform: scale(1.1);
-        }
-        .gallery {
-            background: #f9e4d4;
-            padding: 30px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            justify-content: center;
-            max-width: 90%;
-            margin: auto;
-            border-radius: 15px;
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .gallery img:hover {
-            transform: scale(1.1);
-            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-        .popup-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            position: relative;
-            max-width: 500px;
-            text-align: center;
-        }
-        .popup .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .popup img {
-            width: 80%;
-            height: auto;
-            border-radius: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>밤이네 하루하루</title>
+  <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background: linear-gradient(to bottom, #ffffff, #f7f7f7);
+        transition: background 0.5s ease;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+    .navbar a {
+        text-decoration: none;
+        color: black;
+        margin: 0 20px;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .navbar a:hover {
+        color: #ff5733;
+        transform: scale(1.15);
+    }
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50vh; /* 절반으로 줄임 */
+        padding-top: 80px;
+    }
+    .main-content h1 {
+        font-size: 45px;
+        font-weight: bold;
+        color: #444;
+        animation: fadeIn 1s ease-in-out;
+    }
+    .main-content p {
+        max-width: 600px;
+        font-size: 20px;
+        color: #666;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .btn {
+        margin-top: 20px;
+        padding: 14px 30px;
+        border: none;
+        border-radius: 30px;
+        background: #ff5733;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background 0.3s, transform 0.3s;
+    }
+    .btn:hover {
+        background: #d94a2b;
+        transform: scale(1.1);
+    }
+    .gallery {
+        background: #f9e4d4;
+        padding: 40px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px;
+        justify-content: center;
+        max-width: 95%;
+        margin: auto;
+        border-radius: 15px;
+    }
+    .gallery img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover {
+        transform: scale(1.1);
+        box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+    .popup-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        position: relative;
+        max-width: 500px;
+        text-align: center;
+    }
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .popup img {
+        width: 80%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .popup img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: zoom-in;
+    }
+    .popup img.enlarged {
+    transform: scale(1.5);
+    cursor: zoom-out;
+}
+
+  </style>
 </head>
 <body>
 <div class="container">
-    <div class="navbar">
-        <a onclick="showTextPopup('이곳은 밤이와 하루의 아름답고 소중했던 순간을 간직한 공간이기도, 기억 속 따뜻한 시간들을 담아둔 작은 보금자리이기도 합니다.')">About</a>
-        <a onclick="showTextPopup('사진에는 순간의 떨림과 따뜻한 감정, 애틋한 사랑이 담겨 있습니다. 직접 담아낸 추억의 조각들을 만나보세요.')">Feature</a>
-        <a onclick="showTextPopup('느린 호흡의 대화를 나누고 싶다면 당신이 누구든 언제나 환영합니다. 편하게 연락 주세요. (nec_8@naver.com)')">Contact</a>
-    </div>
-    <div class="main-content">
-        <p>그 순간, 그 따뜻함을 기억하며</p>
-        <h1>시간의 흐름 속에서 피어난 이야기</h1>
-        <p>"추억이 쌓이고 감정이 머무는 곳, <br>밤이와 하루의 소중한 시간들이 머문 자리입니다."</p>
-        <button class="btn" onclick="showImagePopup()">More View</button>
-    </div>
+  <div class="navbar">
+    <a onclick="showTextPopup('이곳은 밤이와 하루의 아름답고 소중했던 순간을 간직한 공간이기도, 기억 속 따뜻한 시간들을 담아둔 작은 보금자리이기도 합니다.')">About</a>
+    <a onclick="showTextPopup('사진에는 순간의 떨림과 따뜻한 감정, 애틋한 사랑이 담겨 있습니다. 직접 담아낸 추억의 조각들을 만나보세요.')">Feature</a>
+    <a onclick="showTextPopup('느린 호흡의 대화를 나누고 싶다면 당신이 누구든 언제나 환영합니다. 편하게 연락 주세요. (nec_8@naver.com)')">Contact</a>
+  </div>
+  <div class="main-content">
+    <p>그 순간, 그 따뜻함을 기억하며</p>
+    <h1>시간의 흐름 속에서 피어난 이야기</h1>
+    <p>"추억이 쌓이고 감정이 머무는 곳, <br>밤이와 하루의 소중한 시간들이 머문 자리입니다."</p>
+    <button class="btn" onclick="showImagePopup()">More View</button>
+  </div>
 </div>
 <div class="popup" id="text-popup">
-    <div class="popup-content">
-        <span class="close" onclick="closePopup('text-popup')">&times;</span>
-        <p id="popup-text"></p>
-    </div>
+  <div class="popup-content">
+    <span class="close" onclick="closePopup('text-popup')">&times;</span>
+    <p id="popup-text"></p>
+  </div>
 </div>
 <div class="popup" id="image-popup">
-    <div class="popup-content">
-        <span class="close" onclick="closePopup('image-popup')">&times;</span>
-        <p>소중한 순간이 한 장의 사진 속에 머무릅니다.</p>
-        <img src="https://i.imgur.com/EThKFJh.jpeg" alt="More View Image">
-    </div>
+  <div class="popup-content">
+    <span class="close" onclick="closePopup('image-popup')">&times;</span>
+    <p>소중한 순간이 한 장의 사진 속에 머무릅니다.</p>
+    <img src="https://i.imgur.com/EThKFJh.jpeg" alt="More View Image">
+  </div>
 </div>
 <script>
-    function showTextPopup(text) {
-      document.getElementById("popup-text").innerText = text;
-      document.getElementById("text-popup").style.display = "flex";
-    }
-    function showImagePopup() {
-      document.getElementById("image-popup").style.display = "flex";
-    }
-    function closePopup(id) {
-      document.getElementById(id).style.display = "none";
-    }
+  function showTextPopup(text) {
+    document.getElementById("popup-text").innerText = text;
+    document.getElementById("text-popup").style.display = "flex";
+  }
+  function showImagePopup() {
+    document.getElementById("image-popup").style.display = "flex";
+  }
+  function closePopup(id) {
+    document.getElementById(id).style.display = "none";
+  }
+  document.getElementById("gallery-popup").addEventListener("click", function(event) {
+      if (event.target === this) {
+          closePopup("gallery-popup");
+      }
+  });
+  document.getElementById("popup-img").addEventListener("click", function() {
+    this.classList.toggle("enlarged");
+  });
+
+
 </script>
 <div class="gallery">
-    <img src="https://i.imgur.com/jBzlWAF.jpeg">
-    <img src="https://i.imgur.com/XR2ohIS.jpeg">
-    <img src="https://i.imgur.com/S0PpUXe.jpeg">
-    <img src="https://i.imgur.com/E29d3B3.jpeg">
-    <img src="https://i.imgur.com/YNXh19x.jpeg">
-    <img src="https://i.imgur.com/rOJh1us.jpeg">
-    <img src="https://i.imgur.com/mQuCuEQ.jpeg">
-    <img src="https://i.imgur.com/L7pUqRk.jpeg">
-    <img src="https://i.imgur.com/vxS3HFO.jpeg">
-    <img src="https://i.imgur.com/wwQmTvR.jpeg">
-    <img src="https://i.imgur.com/8F8sPPv.jpeg">
-    <img src="https://i.imgur.com/wv9UVAo.jpeg">
-    <img src="https://i.imgur.com/CBrGVWn.jpeg">
-    <img src="https://i.imgur.com/C2zcw1v.jpeg">
-    <img src="https://i.imgur.com/pAnsKrj.jpeg">
-    <img src="https://i.imgur.com/mefVLwd.jpeg">
-    <img src="https://i.imgur.com/WtsE9X3.jpeg">
-    <img src="https://i.imgur.com/OCd385s.jpeg">
+  <img src="https://i.imgur.com/jBzlWAF.jpeg">
+  <img src="https://i.imgur.com/XR2ohIS.jpeg">
+  <img src="https://i.imgur.com/S0PpUXe.jpeg">
+  <img src="https://i.imgur.com/E29d3B3.jpeg">
+  <img src="https://i.imgur.com/YNXh19x.jpeg">
+  <img src="https://i.imgur.com/rOJh1us.jpeg">
+  <img src="https://i.imgur.com/mQuCuEQ.jpeg">
+  <img src="https://i.imgur.com/L7pUqRk.jpeg">
+  <img src="https://i.imgur.com/vxS3HFO.jpeg">
+  <img src="https://i.imgur.com/wwQmTvR.jpeg">
+  <img src="https://i.imgur.com/8F8sPPv.jpeg">
+  <img src="https://i.imgur.com/wv9UVAo.jpeg">
+  <img src="https://i.imgur.com/CBrGVWn.jpeg">
+  <img src="https://i.imgur.com/C2zcw1v.jpeg">
+  <img src="https://i.imgur.com/pAnsKrj.jpeg">
+  <img src="https://i.imgur.com/mefVLwd.jpeg">
+  <img src="https://i.imgur.com/WtsE9X3.jpeg">
+  <img src="https://i.imgur.com/OCd385s.jpeg">
 </div>
 
 </body>
 <script>
-    function showTextPopup(text) {
-        document.getElementById("popup-text").innerText = text;
-        document.getElementById("text-popup").style.display = "flex";
-    }
+  function showTextPopup(text) {
+      document.getElementById("popup-text").innerText = text;
+      document.getElementById("text-popup").style.display = "flex";
+  }
 
-    function closePopup(id) {
-        document.getElementById(id).style.display = "none";
-    }
+  function closePopup(id) {
+      document.getElementById(id).style.display = "none";
+  }
 
-    function showGalleryPopup(imgSrc) {
-        document.getElementById("popup-img").src = imgSrc;
-        document.getElementById("gallery-popup").style.display = "flex";
-    }
+  function showGalleryPopup(imgSrc) {
+      document.getElementById("popup-img").src = imgSrc;
+      document.getElementById("gallery-popup").style.display = "flex";
+  }
 </script>
 </html>
 </title>
