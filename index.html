@@ -103,7 +103,6 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .gallery img:hover {
-        transform: scale(1.1);
         box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
     }
     .popup {
@@ -201,41 +200,40 @@
 
 
 </script>
+
 <div class="gallery">
-  <img src="https://i.imgur.com/jBzlWAF.jpeg">
-  <img src="https://i.imgur.com/clDycMf.jpeg">
-  <img src="https://i.imgur.com/S0PpUXe.jpeg">
-  <img src="https://i.imgur.com/E29d3B3.jpeg">
-  <img src="https://i.imgur.com/YNXh19x.jpeg">
-  <img src="https://i.imgur.com/rOJh1us.jpeg">
-  <img src="https://i.imgur.com/mQuCuEQ.jpeg">
-  <img src="https://i.imgur.com/L7pUqRk.jpeg">
-  <img src="https://i.imgur.com/vxS3HFO.jpeg">
-  <img src="https://i.imgur.com/wwQmTvR.jpeg">
-  <img src="https://i.imgur.com/mwDDrix.jpeg">
-  <img src="https://i.imgur.com/wv9UVAo.jpeg">
-  <img src="https://i.imgur.com/CBrGVWn.jpeg">
-  <img src="https://i.imgur.com/C2zcw1v.jpeg">
-  <img src="https://i.imgur.com/pAnsKrj.jpeg">
-  <img src="https://i.imgur.com/mefVLwd.jpeg">
-  <img src="https://i.imgur.com/WtsE9X3.jpeg">
-  <img src="https://i.imgur.com/OCd385s.jpeg">
+  <img src="https://i.imgur.com/jBzlWAF.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/clDycMf.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/S0PpUXe.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/E29d3B3.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/YNXh19x.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/rOJh1us.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/mQuCuEQ.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/L7pUqRk.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/vxS3HFO.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/wwQmTvR.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/mwDDrix.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/wv9UVAo.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/CBrGVWn.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/C2zcw1v.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/pAnsKrj.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/mefVLwd.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/WtsE9X3.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/OCd385s.jpeg" onclick="showGalleryPopup(this.src)">
 </div>
-
-</body>
+<div class="popup" id="gallery-popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup('gallery-popup')">&times;</span>
+    <img id="popup-img" src="" alt="Gallery Image">
+  </div>
+</div>
 <script>
-  function showTextPopup(text) {
-      document.getElementById("popup-text").innerText = text;
-      document.getElementById("text-popup").style.display = "flex";
+  function showGalleryPopup(src) {
+      document.getElementById("popup-img").src = src; // 클릭한 이미지의 src를 팝업 이미지로 설정
+      document.getElementById("gallery-popup").style.display = "flex"; // 팝업 표시
   }
-
   function closePopup(id) {
-      document.getElementById(id).style.display = "none";
-  }
-
-  function showGalleryPopup(imgSrc) {
-      document.getElementById("popup-img").src = imgSrc;
-      document.getElementById("gallery-popup").style.display = "flex";
+      document.getElementById(id).style.display = "none"; // 팝업 닫기 기능
   }
 </script>
 </html>
