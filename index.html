@@ -142,7 +142,7 @@
         transition: transform 0.2s ease, background 0.2s ease;
     }
         .popup .close:hover {
-        background: #ff6650; /* 호버 시 색상 변경 */
+        background: #ff6650;
         color: white;
         transform: scale(1.1);
     }
@@ -172,7 +172,21 @@
         .gallery {
             margin-top: 20px; /* More View 버튼과 간격 유지 */
         }
+        .gallery img {
+            width: 70%; /* 모바일 화면에서 갤러리 이미지 크기를 70%로 조정 */
+            margin: auto;
+        }
 }
+        .container {
+            width: 95%;
+        }
+        .main-content {
+            min-height: 70vh; /* 모바일에서 충분한 공간 확보 */
+        }
+        .gallery {
+            margin-top: 20px; /* More View 버튼과 간격 유지 */
+        }
+    }
   </style>
 </head>
 <body>
