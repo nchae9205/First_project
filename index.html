@@ -162,7 +162,7 @@
     transform: scale(1.5);
     cursor: zoom-out;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 430px) {
         .container {
             width: 95%;
         }
@@ -170,10 +170,13 @@
             min-height: 70vh; /* 모바일에서 충분한 공간 확보 */
         }
         .gallery {
-            margin-top: 20px; /* More View 버튼과 간격 유지 */
-        }
+            grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개씩 정렬 */
+            gap: 10px; /* 간격 줄여서 모바일 화면에서 보기 좋게 */
+       }
+}
         .gallery img {
-            width: 50%; /* 모바일에서 각 이미지 크기를 50%로 조정 */
+            width: 45%; /* 기존보다 축소 */
+            margin: auto; /* 가운데 정렬 */
         }
 }
         .container {
