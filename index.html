@@ -6,11 +6,11 @@
   <title>밤이네 하루하루</title>
   <style>
     body {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Noto Serif KR', serif;
         margin: 0;
         padding: 0;
         text-align: center;
-        background: linear-gradient(to bottom, #ffffff, #f7f7f7);
+        background: linear-gradient(to bottom, #ffffff, #f3e5d8, #e3c6a8);
         transition: background 0.5s ease;
     }
     .container {
@@ -24,7 +24,7 @@
         align-items: center;
         padding: 15px;
         background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
         position: fixed;
         width: 100%;
         top: 0;
@@ -42,7 +42,7 @@
         transition: color 0.3s ease, transform 0.3s ease;
     }
     .navbar a:hover {
-        color: #ff5733;
+        color: #d94b2b;
         transform: scale(1.15);
     }
     .main-content {
@@ -56,7 +56,7 @@
     .main-content h1 {
         font-size: 45px;
         font-weight: bold;
-        color: #444;
+        color: #5a4033;;
         animation: fadeIn 1s ease-in-out;
     }
     .main-content p {
@@ -64,6 +64,7 @@
         font-size: 20px;
         color: #666;
         animation: fadeIn 1.5s ease-in-out;
+        line-height: 1.8;
     }
     .btn {
         margin-top: 20px;
@@ -81,11 +82,11 @@
         background: #d94a2b;
         transform: scale(1.1);
     }
-    .gallery {
-        background: #f9e4d4;
+        .gallery {
+        background: #f8d7b9;
         padding: 40px;
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 15px;
         justify-content: center;
         max-width: 95%;
@@ -112,7 +113,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.7);
         justify-content: center;
         align-items: center;
     }
@@ -123,6 +124,7 @@
         position: relative;
         max-width: 500px;
         text-align: center;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     }
     .popup .close {
         position: absolute;
