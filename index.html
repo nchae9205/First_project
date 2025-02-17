@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>밤이네 하루하루</title>
     <style>
         body {
@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background: #ffffff !important;
+            background: linear-gradient(to bottom, #fff7f1, #f9e0c9, #e6b89c);
             transition: background 0.5s ease;
         }
         .container {
@@ -20,19 +20,30 @@
             padding: 20px;
         }
         .navbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* ✅ 모바일에서 네비게이션 자동 줄바꿈 */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar a {
+        margin: 10px 0;
+    }
+}
         .navbar a {
             text-decoration: none;
             color: black;
@@ -97,15 +108,17 @@
             background: #d94a2b;
             transform: scale(1.1);
         }
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    max-width: 95%;
-    margin: auto;
-    border-radius: 15px;
-}
+            .gallery {
+            background: #f8d7b9;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(150px, 1fr)); gap: 20px; padding: 20px; align-items: center; justify-items: center;
+            gap: 80px 1cm;
+            justify-content: center;
+            max-width: 95%;
+            margin: auto;
+            border-radius: 15px;
+        }
         .gallery img {
             width: 100%;
             height: auto;
@@ -118,7 +131,6 @@
         .gallery img:hover {
             box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
         }
-
         .popup {
             display: none;
             position: fixed;
@@ -174,29 +186,19 @@
         transform: scale(1.5);
         cursor: zoom-out;
         }
-        @media screen and (max-width: 430px) {
-            .navbar {
-        flex-direction: column;
-    }
-    .navbar a {
-        margin: 10px 0;
-    }
-}
+        /* ✅ 모바일 화면 (아이폰 SE, Mini, 13, 14, 15, 16 대응) */
+@media screen and (max-width: 430px) {
     .container {
         width: 95%;
     }
     .main-content {
         min-height: 70vh;
     }
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    max-width: 95%;
-    margin: auto;
-    border-radius: 15px;
-}
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
     .gallery img {
         width: 100%;
         height: auto;
@@ -252,186 +254,14 @@
                 margin-top: 20px;
             }
         }
-        /* ✅ 스크롤 애니메이션 효과 추가 */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ✅ 다크 모드 스타일 */
-.dark-mode {
-    background: #2c2c2c;
-    color: white;
-}
-.dark-mode .navbar {
-    background: rgba(0, 0, 0, 0.8);
-}
-/* ✅ 네비게이션 바 스크롤 효과 추가 */
-.navbar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-}
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* ✅ 메인 콘텐츠 페이드 인 애니메이션 추가 */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.main-content h1, .main-content p, .btn {
-    animation: fadeInUp 1s ease-in-out;
-}
-
-/* ✅ 갤러리 이미지 호버 효과 추가 */
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* ✅ 배경에 은은한 움직이는 빛 효과 추가 */
-@keyframes glowing {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-body {
-    background: linear-gradient(-45deg, #f8e6d1, #f3d5b5, #e9c4a8);
-    background-size: 400% 400%;
-    animation: glowing 10s ease infinite;
-}
-
-/* ✅ 배경 음악 버튼 추가 */
-.music-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #ff5733;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
-}
-.music-btn:hover {
-    background: #d94a2b;
-}
-<button class="music-btn" onclick="toggleMusic()">🎵 음악 재생</button>
-<audio id="bg-music" loop>
-    <source src="./assets/audio/background-music.mp3" type="audio/mp3">
-</audio>
-/* ✅ 푸터 스타일 추가 */
-footer {
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-}
-
-/* 네비게이션 바 스크롤 효과 */
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* 페이드 인 애니메이션 강화 */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.main-content h1, .main-content p, .btn {
-    animation: fadeInUp 1s ease-in-out;
-}
-
-/* 갤러리 이미지 호버 효과 추가 */
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* 배경에 은은한 움직이는 빛 효과 추가 */
-@keyframes glowing {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-body {
-    background: linear-gradient(-45deg, #f8e6d1, #f3d5b5, #e9c4a8);
-    background-size: 400% 400%;
-    animation: glowing 10s ease infinite;
-}
-
-/* 배경 음악 재생 버튼 추가 */
-.music-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #ff5733;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
-}
-.music-btn:hover {
-    background: #d94a2b;
-}
-
-/* 푸터 추가 */
-footer {
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-}
-        * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    box-sizing: border-box;
-}
     </style>
 </head>
 <body>
 <div class="container">
     <div class="navbar">
-        <a onclick="showTextPopup('이곳은 밤이와 하루의 소중했던 순간을 간직한 공간이기도, 기억 속 따뜻한 시간을 담아둔 작은 보금자리이기도 합니다.')">About</a>
-        <a onclick="showTextPopup('이곳엔 순간의 떨림과 설렘, 가득한 마음이 담겨 있습니다. 직접 담아낸 추억의 조각들을 만나보세요.')">Feature</a>
-        <a onclick="showTextPopup('느리고 긴 호흡의 대화를 나누고 싶다면 언제나 환영합니다. 편하게 연락 주세요. (nec_8@naver.com)')">Contact</a>
+        <a onclick="showTextPopup('이곳은 밤이와 하루의 소중했던 순간순간을 간직한 공간이기도, 기억 속 따뜻한 시간들을 담아둔 작은 보금자리이기도 합니다.')">About</a>
+        <a onclick="showTextPopup('이곳엔 순간의 떨림과 설렘, 마음 가득한 사랑이 담겨 있습니다. 직접 담아낸 추억의 조각들을 만나보세요.')">Feature</a>
+        <a onclick="showTextPopup('느리고 긴 호흡의 대화를 나누고 싶으시다면 언제나 환영합니다. 편하게 연락 주세요. (nec_8@naver.com)')">Contact</a>
     </div>
     <div class="main-content">
         <canvas id="sakuraCanvas"></canvas>
@@ -474,14 +304,7 @@ footer {
       this.classList.toggle("enlarged");
     });
 
-function toggleMusic() {
-    const audio = document.getElementById("bg-music");
-    if (audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
-}
+
 </script>
 
 <div class="gallery">
@@ -626,8 +449,6 @@ function toggleMusic() {
         document.addEventListener("mousemove", enableAudioPlayback);
     });
 </script>
-<footer>
-    <p>© 2025 밤이네 하루하루 | Designed with Nchae</p>
-</footer>
+
 </body>
 </html>
