@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
     <title>밤이네 하루하루</title>
     <style>
         body {
@@ -19,20 +19,32 @@
             margin: 0 auto;
             padding: 20px;
         }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* ✅ 모바일에서 네비게이션 자동 줄바꿈 */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar a {
+        margin: 10px 0;
+    }
+}
+
         .navbar a {
             text-decoration: none;
             color: black;
@@ -217,6 +229,13 @@
                 margin-top: 20px;
             }
         }
+        * {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
     </style>
 </head>
 <body>
@@ -267,6 +286,22 @@
       this.classList.toggle("enlarged");
     });
 
+window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+function toggleMusic() {
+    const audio = document.getElementById("bg-music");
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
 
 </script>
 
@@ -412,6 +447,9 @@
         document.addEventListener("mousemove", enableAudioPlayback);
     });
 </script>
+<footer>
+    <p>© 2025 밤이네 하루하루 | Designed with Nchae</p>
+</footer>
 
 </body>
 </html>
