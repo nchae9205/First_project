@@ -217,6 +217,50 @@
                 margin-top: 20px;
             }
         }
+        /* ✅ 모바일 화면 (아이폰 SE, Mini, 13, 14, 15, 16 대응) */
+@media screen and (max-width: 430px) {
+    .container {
+        width: 95%;
+    }
+    .main-content {
+        min-height: 70vh;
+    }
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ✅ 태블릿 (아이패드 미니, 프로, 에어 대응) */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+}
+
+/* ✅ 데스크톱 (넓은 화면 최적화) */
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 80%;
+    }
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
     </style>
 </head>
 <body>
