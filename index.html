@@ -175,23 +175,23 @@
         transform: scale(1.5);
         cursor: zoom-out;
         }
-        @media screen and (max-width: 430px) {
-            .container {
-                width: 95%;
-            }
-            .main-content {
-                min-height: 70vh;
-            }
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-                padding: 10px;
-           }
+@media screen and (max-width: 430px) {
+    .container {
+        width: 95%;
     }
-            .gallery img {
-                width: 48%;
-                margin: 0;
-            }
+    .main-content {
+        min-height: 70vh;
+    }
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+}
     }
             .container {
                 width: 95%;
@@ -217,7 +217,7 @@
                 margin-top: 20px;
             }
         }
-        
+
     </style>
 </head>
 <body>
