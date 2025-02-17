@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background: linear-gradient(to bottom, #fff7f1, #f9e0c9, #e6b89c);
+            background: #ffffff !important;
             transition: background 0.5s ease;
         }
         .container {
@@ -52,12 +52,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        pointer-events: none; /* 클릭 이벤트 방해하지 않도록 설정 */
-        z-index: 0; /* 메인 콘텐츠보다 아래에 배치 */
+        pointer-events: none;
+        z-index: 0; 
     }
     .main-content {
-        position: relative; /* 캔버스를 .main-content 내부에 고정 */
-        overflow: hidden; /* 벚꽃이 메인 페이지 밖으로 나가지 않도록 설정 */
+        position: relative; 
+        overflow: hidden; 
     }
         .main-content {
             display: flex;
@@ -101,8 +101,8 @@
             background: #f8d7b9;
             padding: 40px;
             display: grid;
-            grid-template-columns: repeat(3, minmax(150px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(3, minmax(150px, 1fr)); gap: 20px; padding: 20px; align-items: center; justify-items: center;
+            gap: 80px 1cm;
             justify-content: center;
             max-width: 95%;
             margin: auto;
@@ -113,13 +113,14 @@
             height: auto;
             object-fit: cover;
             border-radius: 15px;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); margin: 0; padding: 10px;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .gallery img:hover {
             box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
         }
+
         .popup {
             display: none;
             position: fixed;
@@ -184,7 +185,7 @@
             }
             .gallery {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 5px;
+                gap: 15px;
                 padding: 10px;
            }
     }
@@ -217,6 +218,157 @@
                 margin-top: 20px;
             }
         }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.dark-mode {
+    background: #2c2c2c;
+    color: white;
+}
+.dark-mode .navbar {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.navbar {
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.main-content h1, .main-content p, .btn {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+@keyframes glowing {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+body {
+    background: linear-gradient(-45deg, #f8e6d1, #f3d5b5, #e9c4a8);
+    background-size: 400% 400%;
+    animation: glowing 10s ease infinite;
+}
+
+
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff5733;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.music-btn:hover {
+    background: #d94a2b;
+}
+
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.main-content h1, .main-content p, .btn {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+@keyframes glowing {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+body {
+    background: linear-gradient(-45deg, #f8e6d1, #f3d5b5, #e9c4a8);
+    background-size: 400% 400%;
+    animation: glowing 10s ease infinite;
+}
+
+
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff5733;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.music-btn:hover {
+    background: #d94a2b;
+}
+
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
     </style>
 </head>
 <body>
@@ -304,11 +456,11 @@
 </div>
 <script>
     function showGalleryPopup(src) {
-        document.getElementById("popup-img").src = src; // 클릭한 이미지의 src를 팝업 이미지로 설정
-        document.getElementById("gallery-popup").style.display = "flex"; // 팝업 표시
+        document.getElementById("popup-img").src = src; 
+        document.getElementById("gallery-popup").style.display = "flex"; 
     }
     function closePopup(id) {
-        document.getElementById(id).style.display = "none"; // 팝업 닫기 기능
+        document.getElementById(id).style.display = "none"; 
     }
 </script>
 </html>
@@ -319,22 +471,22 @@
     const canvas = document.getElementById("sakuraCanvas");
     const ctx = canvas.getContext("2d");
 
-    // 캔버스를 .main-content 크기에 맞게 조정
+
     function setCanvasSize() {
       const mainContent = document.querySelector(".main-content");
       canvas.width = mainContent.clientWidth;
       canvas.height = mainContent.clientHeight;
     }
 
-    // 초기 크기 설정
+
     setCanvasSize();
 
-    // 창 크기 변경 시 캔버스 크기 조정
+
     window.addEventListener("resize", setCanvasSize);
 
     // 벚꽃 입자 정보
     const petals = [];
-    const petalCount = 25; // 벚꽃 잎 개수
+    const petalCount = 45; 
 
     class Petal {
       constructor() {
@@ -360,19 +512,19 @@
       }
 
       draw() {
-          ctx.fillStyle = `rgba(255, 182, 193, ${this.opacity})`; // 연한 분홍색
+          ctx.fillStyle = `rgba(255, 182, 193, ${this.opacity})`; 
           ctx.beginPath();
           ctx.ellipse(this.x, this.y, this.size, this.size / 2, this.angle, 0, Math.PI * 2);
           ctx.fill();
       }
     }
 
-    // 벚꽃 입자 생성
+
     for (let i = 0; i < petalCount; i++) {
       petals.push(new Petal());
     }
 
-    // 애니메이션 실행
+
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (const petal of petals) {
@@ -385,7 +537,7 @@
     animate();
 </script>
 
-<!-- ✅ 여기에서부터 배경음악 자동 재생 코드 추가 -->
+
 <audio id="bg-music" loop>
     <source src="./assets/audio/background-music.mp3" type="audio/mp3">
 </audio>
@@ -396,7 +548,7 @@
 
         audio.volume = 0.5;  // 기본 볼륨 설정
 
-        // 브라우저 자동 재생 차단 우회 - 사용자 상호작용 감지
+
         function enableAudioPlayback() {
             audio.play().then(() => {
                 console.log("배경 음악 자동 재생 성공");
@@ -406,7 +558,7 @@
             }).catch(error => console.log("자동 재생 차단됨:", error));
         }
 
-        // 클릭, 스크롤, 마우스 이동 시 자동 재생 시도
+
         document.addEventListener("click", enableAudioPlayback);
         document.addEventListener("scroll", enableAudioPlayback);
         document.addEventListener("mousemove", enableAudioPlayback);
