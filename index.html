@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -259,15 +259,18 @@
   function closePopup(id) {
     document.getElementById(id).style.display = "none";
   }
-  document.getElementById("gallery-popup").addEventListener("click", function(event) {
-      if (event.target === this) {
-          closePopup("gallery-popup");
-      }
-  });
-  document.getElementById("popup-img").addEventListener("click", function() {
-    this.classList.toggle("enlarged");
-  });
-
+if (document.getElementById("gallery-popup") !== null) {
+    document.getElementById("gallery-popup").addEventListener("click", function(event) {
+        if (event.target === this) {
+            closePopup("gallery-popup");
+        }
+    });
+  }
+  if (document.getElementById("popup-img") !== null) {
+    document.getElementById("popup-img").addEventListener("click", function() {
+      this.classList.toggle("enlarged");
+    });
+  }
 
 </script>
 
@@ -379,6 +382,7 @@
   }
 
   animate();
+
 </script>
 <audio id="bg-music" loop>
   <source src="./assets/audio/background-music.mp3" type="audio/mp3">
@@ -386,8 +390,6 @@
 <footer>
   <p>© 2025 밤이네 하루하루 | Designed with Nchae</p>
 </footer>
-
-</html>
 <title></title>
 <head></head>
 <body>
@@ -414,4 +416,4 @@
   });
 </script>
 </body>
-<html></html>
+</html>
