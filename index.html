@@ -193,7 +193,7 @@
 }
 }
 }
-        .container {
+  c      .container {
             width: 95%;
         }
         .main-content {
@@ -383,12 +383,28 @@ if (document.getElementById("gallery-popup") !== null) {
 
   animate();
 
+  document.querySelector('.close_popup').addEventListener('click', function() {
+    documnet.querySelector('.popup_overlay').style.display = 'none';
+  });
+
+  document.qeurySelector('.popup_overlay'.addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelector('.popup_overlay').style.display = 'none';
+    }
+  });
+
 </script>
 <audio id="bg-music" loop>
   <source src="./assets/audio/background-music.mp3" type="audio/mp3">
 </audio>
 <footer>
-  <p>© 2025 밤이네 하루하루 | Designed with Nchae</p>
+  <p><a href="mailto:nec_8@naver.com"><© 2025 밤이네 하루하루" | Designed with Nchae</p>
 </footer>
 <title></title>
 <head></head>
