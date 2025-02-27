@@ -16,7 +16,7 @@
     }
 
     .container {
-        width: 95%;
+        width: 80%;
         margin: 0 auto;
         padding: 20px;
     }
@@ -64,7 +64,9 @@
     .main-content {
         position: relative;
         overflow: hidden;
-        min-height: 70vh;
+    }
+
+    .main-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -117,7 +119,6 @@
         max-width: 95%;
         margin: auto;
         border-radius: 15px;
-        margin-top: 20px;
     }
 
     .gallery img {
@@ -214,6 +215,18 @@
         }
     }
 
+    .container {
+        width: 95%;
+    }
+
+    .main-content {
+        min-height: 70vh;
+    }
+
+    .gallery {
+        margin-top: 20px;
+    }
+
     .gallery img {
         width: 70%;
         margin: auto;
@@ -249,6 +262,39 @@
     <img src="https://i.imgur.com/pfa4pfQ.jpeg" alt="More View Image">
   </div>
 </div>
+<div class="gallery">
+  <img src="https://i.imgur.com/jBzlWAF.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/clDycMf.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/S0PpUXe.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/E29d3B3.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/YNXh19x.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/rOJh1us.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/mQuCuEQ.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/L7pUqRk.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/vxS3HFO.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/wwQmTvR.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/mwDDrix.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/wv9UVAo.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/CBrGVWn.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/C2zcw1v.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/pAnsKrj.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/mefVLwd.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/WtsE9X3.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/OCd385s.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/lYWGNWw.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/SIowbe4.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/FEbk8Me.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/PimMS4W.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/VMCD84V.jpeg" onclick="showGalleryPopup(this.src)">
+  <img src="https://i.imgur.com/cQm2van.jpeg" onclick="showGalleryPopup(this.src)">
+</div>
+<div class="popup" id="gallery-popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup('gallery-popup')">&times;</span>
+    <img id="popup-img" src="" alt="Gallery Image">
+  </div>
+</div>
+
 <script>
   function showTextPopup(text) {
     document.getElementById("popup-text").innerText = text;
@@ -263,19 +309,15 @@
       document.getElementById(id).style.display = "none";
   }
 
-  if (document.getElementById("gallery-popup") !== null) {
-      document.getElementById("gallery-popup").addEventListener("click", function(event) {
-          if (event.target === this) {
-              closePopup("gallery-popup");
-          }
-      });
-  }
+  document.getElementById("gallery-popup").addEventListener("click", function(event) {
+      if (event.target === this) {
+          closePopup("gallery-popup");
+      }
+  });
 
-  if (document.getElementById("popup-img") !== null) {
-      document.getElementById("popup-img").addEventListener("click", function() {
-        this.classList.toggle("enlarged");
-      });
-  }
+  document.getElementById("popup-img").addEventListener("click", function() {
+      this.classList.toggle("enlarged");
+  });
 
   function showGalleryPopup(src) {
       document.getElementById("popup-img").src = src;
@@ -370,39 +412,6 @@
       document.addEventListener("mousemove", enableAudioPlayback);
   });
 </script>
-
-<div class="gallery">
-  <img src="https://i.imgur.com/jBzlWAF.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/clDycMf.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/S0PpUXe.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/E29d3B3.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/YNXh19x.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/rOJh1us.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/mQuCuEQ.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/L7pUqRk.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/vxS3HFO.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/wwQmTvR.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/mwDDrix.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/wv9UVAo.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/CBrGVWn.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/C2zcw1v.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/pAnsKrj.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/mefVLwd.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/WtsE9X3.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/OCd385s.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/lYWGNWw.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/SIowbe4.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/FEbk8Me.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/PimMS4W.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/VMCD84V.jpeg" onclick="showGalleryPopup(this.src)">
-  <img src="https://i.imgur.com/cQm2van.jpeg" onclick="showGalleryPopup(this.src)">
-</div>
-<div class="popup" id="gallery-popup">
-  <div class="popup-content">
-    <span class="close" onclick="closePopup('gallery-popup')">&times;</span>
-    <img id="popup-img" src="" alt="Gallery Image">
-  </div>
-</div>
 </body>
 <audio id="bg-music" loop>
   <source src="./assets/audio/background-music.mp3" type="audio/mp3">
