@@ -54,23 +54,28 @@
 ---
 
 ## 🚀 실행 방법
+
 ### 1️⃣ 로컬에서 실행
+
 ```bash
 git clone https://github.com/사용자명/bamine-gallery.git
 cd bamine-gallery
 open index.html  # 또는 브라우저에서 파일 열기
 
 2️⃣ GitHub Pages를 통해 실행
+
 프로젝트가 배포되면, 다음 URL에서 실행할 수 있습니다.
 👉 https://사용자명.github.io/bamine-gallery
 
 🛠 업데이트 예정 기능
+
 🔄 이전/다음 이미지 탐색 화살표 추가
 🌙 다크 모드 지원
 🔗 이미지 공유 기능
 📝 이미지별 간단한 설명 추가 기능
 
 📧 문의 및 기여
+
 본 프로젝트에 대한 의견이나 개선 사항이 있다면 언제든지 연락주세요!
 📩 이메일: nec_8@naver.com
 📌 기여: Pull Request를 통해 개선 제안을 환영합니다!
