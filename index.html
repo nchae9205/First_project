@@ -16,7 +16,7 @@
     }
 
     .container {
-        width: 80%;
+        width: 95%;
         margin: 0 auto;
         padding: 20px;
     }
@@ -64,9 +64,7 @@
     .main-content {
         position: relative;
         overflow: hidden;
-    }
-
-    .main-content {
+        min-height: 70vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -119,6 +117,7 @@
         max-width: 95%;
         margin: auto;
         border-radius: 15px;
+        margin-top: 20px;
     }
 
     .gallery img {
@@ -193,8 +192,8 @@
     }
 
     .popup img.enlarged {
-    transform: scale(1.5);
-    cursor: zoom-out;
+        transform: scale(1.5);
+        cursor: zoom-out;
     }
 
     @media screen and (max-width: 430px) {
@@ -213,18 +212,6 @@
             width: 100%;
             height: auto;
         }
-    }
-
-    .container {
-        width: 95%;
-    }
-
-    .main-content {
-        min-height: 70vh;
-    }
-
-    .gallery {
-        margin-top: 20px;
     }
 
     .gallery img {
